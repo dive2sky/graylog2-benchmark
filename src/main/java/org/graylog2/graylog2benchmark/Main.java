@@ -29,7 +29,7 @@ import org.graylog2.graylog2benchmark.senders.SenderFactory;
 public class Main 
 {
     
-    public static void main( String[] args ) {
+    public static void main( String[] args) {
         // Read CLI parameters.
         final CommandLineArguments commandLineArguments = new CommandLineArguments();
         final JCommander jCommander = new JCommander(commandLineArguments, args);

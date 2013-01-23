@@ -26,9 +26,13 @@ import org.graylog2.graylog2benchmark.CommandLineArguments;
  */
 public class SenderFactory {
     
-    public static Sender get(String type, CommandLineArguments cli) {        
-        if (type.equals("syslogudp")) {
-            return new SyslogUDPSender(cli.getHost(), cli.getPort());
+    public static Sender get(String type, CommandLineArguments cli) {
+        try {
+            if (type.equals("syslogudp")) {
+                return new SyslogUDPSender(cli.getHost(), cli.getPort());
+            }
+        } catch(Exception e) {
+            throw new RuntimeException("Could not initialize sender. " + e);
         }
         
         throw new RuntimeException("No sender for format [" + type + "].");
