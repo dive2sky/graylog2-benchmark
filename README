@@ -1,0 +1,13 @@
+Usage: <main class> [options]  Options:
+  * -f, --format    Message format (e.g. tcpgelf)
+    -h, --help      Show usage information and exit
+                    Default: false
+  * -x, --host      Target host
+  * -p, --port      Target port
+                    Default: 0
+    -d, --sleep     Delay between each message that is sent in milliseconds (per
+                    thread). Default: 5
+                    Default: 5
+    -t, --threads   Number of parallel threads to use
+                    Default: 1
+
